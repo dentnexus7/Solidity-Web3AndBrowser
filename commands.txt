@@ -1,0 +1,84 @@
+Web3.js
+
+web3.eth.sendTransaction({from: "0x5fF6c687E0BFC7fd41BF948A5aBc0d8D8c57479B", to:"0x383f0dEaDDFE11b3Ec5a8dF81CDb06083f1b6e4E", value: web3.utils.toWei("1", "ether")});
+
+//Import Web3
+let Web3 = require("Web3");
+//Connect web3 to Ganache
+let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+
+web3.eth.call({from:"",to:"",data:""});
+
+web3.utils.sha3("myUint()");
+web3.utils.sha3("myUint()").substr(0,10); // this is function signature = smart contract input hash
+
+// initiate smart contract to interact with
+let contract = new web3.eth.Contract(<SMRT CNTRCT ABI>, <"SMRT CNTRCT ADDR">);
+ 
+contract.methods.myUint().call().then(console.log);
+
+contract.methods.setUint(59).send({from"<ADDR>"});
+
+
+
+
+Truffle
+
+npm install -g truffle@12.x.x
+
+truffle unbox react
+truffle development
+	- migrate
+
+
+
+
+
+
+
+
+cd '.\Users\Gregg\Documents\Udemy Projects\Solidity\Ex_Private_Network\'
+
+
+
+
+
+Geth
+
+// Create your own private blockchain using genesis.json file
+geth init .\genesis.json --datadir mychaindata
+
+// connect to your blockchain (no discover to not go looking for other nodes)
+geth --datadir .\mychaindata\ --nodiscover
+
+// tip and trick - unlock first account and start mining
+// USE THIS
+geth --datadir .\mychaindata\ --nodiscover --unlock 0 --mine 1
+
+// attach to your blockchain (Geth Javascript console)
+geth attach ipc:\\.\pipe\geth.ipc
+
+eth.accounts;
+personal.newAccount();
+
+miner.setEtherbase(eth.accounts[0]);
+miner.start(1); // 1 thread
+
+// web3 endpoint
+web3
+web3.fromWei(eth.getBalance(eth.accounts[0]), "ether"); // finney
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
