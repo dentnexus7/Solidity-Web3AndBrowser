@@ -1,0 +1,1 @@
+This repository exemplifies commands used to interact with smart contracts using web3.js through the "Ethereum Blockchain Developer Bootcamp With Solidity (2022)" Udemy course.
